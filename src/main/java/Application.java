@@ -43,16 +43,13 @@ public class Application{
             City city = new City(1, "Moskov");
             Employee employee1 = new Employee("Omlet","Ovnovich","chicken", city);
 
-            System.out.println("1");
             // Вызываем метод добавления объекта
             employeeDAO.create(employee1);
 
-            System.out.println("2");
             // Создаем список наполняя его объектами, которые получаем
             // путем вызова метода для получения всех элементов таблицы
             List<Employee> list = new ArrayList<>(employeeDAO.readAll());
 
-            System.out.println("3");
             // Выведем список в консоль
             for (Employee employee : list) {
                 System.out.println(employee);

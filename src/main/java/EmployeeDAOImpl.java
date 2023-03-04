@@ -29,7 +29,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             preparedStatement.setInt(4, employee.getCity().getCity_id());
 
             // С помощью метода executeQuery отправляем запрос к базе
-            preparedStatement.executeQuery();
+//            preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,7 +105,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 "UPDATE employee WHERE id=(?)")) {
 
             statement.setInt(1, id);
-            statement.executeQuery();
+            statement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -117,7 +118,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 "DELETE FROM employee WHERE id=(?)")) {
 
             statement.setInt(1, id);
-            statement.executeQuery();
+            statement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
