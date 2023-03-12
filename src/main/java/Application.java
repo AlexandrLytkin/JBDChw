@@ -32,7 +32,7 @@ public class Application{
             System.out.println(employee);
         }
 
-        Employee employee2 = new Employee(11,"Nastya", "Olegovna", "woman",20,1);
+        Employee employee2 = new Employee(1,"Nastya", "Olegovna", "woman",20,1);
 
         // Изменяем объект
         employeeDAO.updateEmployee(employee2);
