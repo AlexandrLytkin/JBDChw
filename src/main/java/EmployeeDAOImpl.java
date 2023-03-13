@@ -14,7 +14,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public void create(Employee employee) {
+    public Employee create(Employee employee) {
         // В ресурсах блока try создаем объект сессии с помощью нашего конфиг-файла
         // И открываем сессию
         try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();) {
@@ -28,7 +28,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             // которые совершили в рамках транзакции
             transaction.commit();
         }
-
+        return employee;
     }
 //    @Override
 //    public void create(Employee employee) {

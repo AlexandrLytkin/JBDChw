@@ -2,7 +2,7 @@ import java.util.List;
 
 public interface EmployeeDAO {
     // Добавление объекта
-    void create(Employee employee);
+    Employee create(Employee employee);
 
     // Получение объекта по id
     Employee readById(int id);

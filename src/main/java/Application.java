@@ -20,7 +20,7 @@ public class Application{
 
         Employee employee1 = new Employee("Katya","Alexeevna","woman",20,1);
         // Создаем объект
-        employeeDAO.create(employee1);
+        Employee createdEmpl = employeeDAO.create(employee1);
 
         // Получаем объект по id
         System.out.println(employeeDAO.readById(1));
@@ -32,13 +32,13 @@ public class Application{
             System.out.println(employee);
         }
 
-        Employee employee2 = new Employee(1,"Nastya", "Olegovna", "woman",20,1);
+        Employee employee2 = new Employee(createdEmpl.getId(),"Nastya", "Olegovna", "woman",20,1);
 
         // Изменяем объект
-        employeeDAO.updateEmployee(employee2);
+        employeeDAO.updateEmployee(employee1);
 
         // Удаляем объект
-        employeeDAO.delete(employee2);
+        employeeDAO.delete(employee1);
 
 
 //        try (final Connection connection = DriverManager.getConnection(url, user, password)) {
