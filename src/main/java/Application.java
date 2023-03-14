@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Application{
+public class Application {
 
     public static void main(String[] args) throws SQLException {
 
@@ -18,9 +18,9 @@ public class Application{
         // Создаем объект класса ДАО
         EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 
-        Employee employee1 = new Employee("Katya","Alexeevna","woman",20,1);
+        Employee employee1 = new Employee("Katya", "Alexeevna", "woman", 20, 1);
         // Создаем объект
-        Employee createdEmpl = employeeDAO.create(employee1);
+        employee1 = employeeDAO.create(employee1);
 
         // Получаем объект по id
         System.out.println(employeeDAO.readById(1));
@@ -32,14 +32,13 @@ public class Application{
             System.out.println(employee);
         }
 
-        Employee employee2 = new Employee(createdEmpl.getId(),"Nastya", "Olegovna", "woman",20,1);
+        employee1 = new Employee(employee1.getId(), "Nastya", "Olegovna", "woman", 20, 1);
 
         // Изменяем объект
         employeeDAO.updateEmployee(employee1);
 
         // Удаляем объект
         employeeDAO.delete(employee1);
-
 
 //        try (final Connection connection = DriverManager.getConnection(url, user, password)) {
 //            String sql = "SELECT * FROM city INNER JOIN employee ON city.city_id = employee.city_id WHERE id = ?";
